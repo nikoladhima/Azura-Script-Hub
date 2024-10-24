@@ -1,5 +1,5 @@
 ## Script Thumbnail
-![azurascripthub thumbnail](https://github.com/user-attachments/assets/91018fd7-5e63-4860-bb0a-6e46ac59f8d6)
+![azurascripthub thumbnail2](https://github.com/user-attachments/assets/61cd514c-397a-4e56-a4d1-99b6d0651b2a)
 
 ## ⚡ Features
 
