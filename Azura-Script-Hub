@@ -1,0 +1,533 @@
+local CoreGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Azura Script Hub ||| discord.gg/azuraservice", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionConfigs"})
+
+function GetShortenedPlrFromName(name)
+	name = string.lower(tostring(name))
+ 
+	if not game:GetService("Players"):FindFirstChild("me") and name == "me" or game:GetService("Players"):FindFirstChild("me") and game:GetService("Players"):FindFirstChild("me").ClassName ~= "Player" and name == "me" then
+		return {LocalPlayer}
+	end
+	if not game:GetService("Players"):FindFirstChild("all") and name == "all" or game:GetService("Players"):FindFirstChild("all") and game:GetService("Players"):FindFirstChild("all").ClassName ~= "Player" and name == "all" then
+		return game:GetService("Players"):GetPlayers()
+	end
+	if not game:GetService("Players"):FindFirstChild("others") and name == "others" or game:GetService("Players"):FindFirstChild("others") and game:GetService("Players"):FindFirstChild("others").ClassName ~= "Player" and name == "others" then
+		name = game:GetService("Players"):GetPlayers()
+		for i, v in pairs(name) do
+			if v == LocalPlayer then
+				table.remove(name, i)
+			end
+		end
+		return name
+	end
+ 
+	for i, v in pairs(game.Players:GetPlayers()) do
+		if string.lower(string.sub(v.DisplayName, 1, #name)) == name or string.lower(string.sub(v.Name, 1, #name)) == name then
+			return {v}
+		end
+	end
+ 
+	return nil
+end
+
+local Tab = Window:MakeTab({
+	Name = "Game Scripts",
+	Icon = "rbxassetid://83262328821985",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Azura Script Hub Loaded!",
+	Content = "discord.gg/azuraservice for suggestions and bug reports",
+	Image = "rbxassetid://4483345998",
+	Time = 15
+})
+
+Tab:AddButton({
+	Name = "Breaking Point",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ColdStep2/Breaking-Point-Funny-Squid-Hax/main/Breaking%20Point%20Funny%20Squid%20Hax",true))();
+		task.wait()
+      		print("loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Knife Ability Test (KAT)",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NaikoScript/Kat-Plus/main/Script"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Cat Clicker",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Cat-Clicker/refs/heads/main/Cat-Clicker%20Source"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Madness Clicker",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Madness-Clicker/refs/heads/main/Madness-Clicker%20Source"))()
+      		task.wait()
+			print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "The Strongest Battlegrounds",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/TSBG-SCRIPT-PHANTASM/refs/heads/main/TSBG"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Bee Swarm Simulator",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))("")
+      		task.wait()
+			print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Rivals",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Rivals_script/refs/heads/main/Rivals_script"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Da Hood",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Da-Hood-swagmode-source-4535"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Doors",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Murder Mystery 2",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script"),true))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Bedwars",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Escape Papa's Pizzaria (Get all items)",
+	Callback = function()
+		print("Loading...")
+		for _,v in pairs(game:GetDescendants()) do
+            if v.ClassName == "RemoteEvent" then
+            if v.Parent.Name == "WeaponsRemotes" or v.Parent.Name == "VipRemotes" or v.Parent.Name == "Remotes" then
+            v:FireServer()
+            end
+            end
+            end
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Pet's GO!",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2529a5f9dfddd5523ca4e22f21cceffa.lua"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Dress To Impress",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/DTI-GUI-V2/main/dti_gui_v2.lua",true))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Arsenal",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Build a boat for treasure",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/ZeeroxHub/main/Loader.lua')()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fling Things And People",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Funky Friday",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Combat Warriors",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://scriptblox.com/raw/Combat-Warriors-Stratos-Hub-17601"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Adopt Me",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Aimblox",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/mexstudios/MexScripts/main/aimblox.lua'))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Flex Your FPS",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/v-oidd/flex-your-fps-script/main/script'))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Untitled Boxing Game",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/v/refs/heads/main/v"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Horror RNG (inf luck)",
+	Callback = function()
+		print("Loading...")
+		while task.wait() do 
+			game:GetService("ReplicatedStorage").Events.InventoryEvent:FireServer("Equip","Super Luck Potion","Usable") 
+		end
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Evade",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-Candy-Farm-20491"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Natural Disasters Survival",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/ge/refs/heads/main/g"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Counter Blox",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://scriptblox.com/raw/Counter-Blox-Solaris-14633"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Taxi Boss",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/Taxi%20Boss", true))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Murderers VS Sheriffs",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/b/refs/heads/main/b"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Admin Scripts",
+	Icon = "rbxassetid://83262328821985",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Nameless Admin",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fates Admin",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "System Broken",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Universal Scripts",
+	Icon = "rbxassetid://83262328821985",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Energizer GUI",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Energizer-GUI/refs/heads/main/FEanimationsR6-R15"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Free emotes/animations",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/e/refs/heads/main/e"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "FE Fling GUI",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Fling-script/refs/heads/main/Fling"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Swimfly (Uses Different method of flying)",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/SwimFly-GUI/e2c48933f44656bc0c3cde7cbb224421e09fa1ba/SwimFly-GUI"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Chat bypass (https://discord.gg/usercreation for key)",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/refs/heads/main/UserCreation.lua", true))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Hitbox Expander (With some extra features)",
+	Callback = function()
+		print("Loading...")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/ignore/refs/heads/main/ignore"))()
+		task.wait()
+      		print("Loaded")
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Anti Virus",
+	Icon = "rbxassetid://119124462913986",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("This Anti-Virus isn't well-known ⚠️USE AT YOUR OWN RISK⚠️ ","This Anti-Virus apparently protects you from malicious scripts like robux stealers, account stealers, etc.")
+
+Tab:AddButton({
+	Name = "Guardian V2",
+	Callback = function()
+		print("Loading..")
+		task.wait()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"))()
+		task.wait()
+		print("Anti-Virus is running in the background")
+	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Extras",
+	Icon = "rbxassetid://97974676819697",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "UNC Test",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/UNC/refs/heads/main/UNC-test"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "Grab tools (Grabs all tools from Lightning)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/getTools/refs/heads/main/Grab-Tools"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "TP tool",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/TP/refs/heads/main/tptool"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "Clear Inventory",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/CI/refs/heads/main/Clear-Inventory"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "Reset",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end
+})
+
+Tab:AddTextbox({
+	Name = "TP to player",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i,Player in GetShortenedPlrFromName(Value) do
+			if Player.Character.HumanoidRootPart ~= nil then 
+				print("Teleported to", Player.DisplayName)
+			LocalPlayer.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame
+			end
+			end
+	end	  
+})
+
+OrionLib:Init()
