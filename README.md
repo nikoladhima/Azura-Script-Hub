@@ -19,6 +19,6 @@
 
 ## 🔌Shortened Script
 ```lua
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nikoladhima/Azura-Script-Hub/refs/heads/main/Azura-Script-Hub"))()
 ```
 <br/>
